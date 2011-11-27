@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
   def following?(followed)
     relationships.find_by_followed_id(followed)
   end
-  
+
   def follow!(followed)
     relationships.create!(:followed_id => followed.id)
   end
